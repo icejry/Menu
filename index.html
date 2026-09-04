@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Menu</title>
+    <title>WebMenu</title>
 
     <style>
         * {
@@ -15,54 +15,79 @@
         }
 
         body {
-            background: #0b0b0f;
+            background: #0d0d12;
             color: white;
         }
 
         .container {
-            width: 900px;
+            width: 1000px;
             max-width: 90%;
-            margin: 60px auto;
+            margin: 40px auto;
         }
 
-        .header {
-            margin-bottom: 45px;
+        .cover {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid #292933;
         }
 
-        .header h1 {
-            font-size: 48px;
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile {
+            margin-top: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #292933;
+        }
+
+        .profile h1 {
+            font-size: 42px;
             font-weight: 600;
         }
 
-        .header h1 span {
-            color: #a855f7;
+        .profile h1 span {
+            color: #a7194b;
         }
 
-        .header p {
-            margin-top: 15px;
-            color: #888;
+        .profile p {
+            margin-top: 12px;
+            color: #999;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .student {
+            margin-top: 20px;
+            color: #777;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .title {
+            margin: 40px 0 20px;
             font-size: 18px;
-        }
-
-        .line {
-            height: 1px;
-            background: #25252d;
-            margin-top: 35px;
+            color: #aaa;
+            letter-spacing: 2px;
         }
 
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 14px;
         }
 
         .card {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 25px 30px;
-            background: #111118;
-            border: 1px solid #242430;
+            padding: 22px 30px;
+            background: #14141c;
+            border: 1px solid #262633;
             border-radius: 15px;
             text-decoration: none;
             color: white;
@@ -70,7 +95,7 @@
         }
 
         .card:hover {
-            border-color: #a855f7;
+            border-color: #a7194b;
             transform: translateX(8px);
         }
 
@@ -81,42 +106,46 @@
         }
 
         .number {
-            color: #a855f7;
-            font-size: 14px;
-            width: 40px;
+            color: #a7194b;
+            font-size: 15px;
+            letter-spacing: 2px;
+            width: 45px;
         }
 
         .name h2 {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 500;
         }
 
         .name p {
-            margin-top: 6px;
+            margin-top: 5px;
             color: #777;
             font-size: 14px;
         }
 
         .arrow {
-            color: #a855f7;
-            font-size: 22px;
+            color: #a7194b;
+            font-size: 25px;
         }
 
         .footer {
-            margin-top: 50px;
+            margin-top: 40px;
             text-align: center;
-            color: #555;
+            color: #666;
             font-size: 14px;
+            line-height: 1.8;
         }
 
         @media(max-width:700px) {
-            .header h1 {
-                font-size: 35px;
+
+            .profile h1 {
+                font-size: 32px;
             }
 
             .card {
-                padding: 20px;
+                padding: 18px;
             }
+
         }
     </style>
 
@@ -126,22 +155,37 @@
 
     <div class="container">
 
-        <div class="header">
+        <div class="cover">
+            <img src="cover.jpg">
+        </div>
+
+
+        <div class="profile">
+
             <h1>
-                Jirayu <span>WebMenu</span>
+                Web<span>Menu</span>
             </h1>
 
             <p>
-                Computer Engineering
-                <br>
-                Rajamangala University of Technology Phra Nakhon
+                Computer Engineering | RMUTP<br><br>
             </p>
 
-            <div class="line"></div>
+            <div class="student">
+                Created by Jirayu Chiyanuwat<br>
+                Student ID : 056950405132-1<br>
+                Computer Engineering
+            </div>
+
+        </div>
+
+
+        <div class="title">
+            MENU
         </div>
 
 
         <div class="menu">
+
 
             <a class="card" href="First Web Page/index.html" target="_blank">
                 <div class="left">
@@ -203,9 +247,21 @@
             </a>
 
 
-            <a class="card" href="My Class/index.html" target="_blank">
+            <a class="card" href="Myfriend/index.html" target="_blank">
                 <div class="left">
                     <div class="number">06</div>
+                    <div class="name">
+                        <h2>My Friend</h2>
+                        <p>Friend Information</p>
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+            </a>
+
+
+            <a class="card" href="My Class/index.html" target="_blank">
+                <div class="left">
+                    <div class="number">07</div>
                     <div class="name">
                         <h2>My Class</h2>
                         <p>Class Schedule</p>
@@ -217,7 +273,7 @@
 
             <a class="card" href="Graph/index.html" target="_blank">
                 <div class="left">
-                    <div class="number">07</div>
+                    <div class="number">08</div>
                     <div class="name">
                         <h2>Graph</h2>
                         <p>Data Visualization</p>
@@ -229,7 +285,7 @@
 
             <a class="card" href="Google-Form/google_form.html" target="_blank">
                 <div class="left">
-                    <div class="number">08</div>
+                    <div class="number">09</div>
                     <div class="name">
                         <h2>Google Form</h2>
                         <p>Online Questionnaire</p>
@@ -246,6 +302,7 @@
             © 2026 132-1 Jirayu Chiyanuwat<br>Computer Engineering<br>
             Rajamangala University of Technology Phra Nakhon
         </div>
+
 
     </div>
 
