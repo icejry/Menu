@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f5f1e8;
+            color: #2b2b2b;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 22px;
+            background: #ffffff;
+            border-top: 7px solid #8b1e24;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin: 0;
+            padding: 15px 12px;
+            text-align: center;
+            font-size: 30px;
+            color: #7b161d;
+            background: linear-gradient(90deg, #fff8d8, #ffe99a, #fff8d8);
+            border: 1px solid #e5c95f;
+            text-shadow: 2px 2px 5px red;
+        }
+
+        h1 a {
+            color: #7b161d;
+            text-decoration: none;
+            border-bottom: 2px solid #c79e23;
+        }
+
+        h1 a:hover {
+            color: #a32029;
+        }
+
+        .subinfo {
+            margin: 12px 0 18px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 4px;
+            background: #eee8dc;
+        }
+
+        th,
+        td {
+            text-align: center;
+            vertical-align: middle;
+            padding: 9px 6px;
+        }
+
+        th {
+            height: 58px;
+            background: #76171d;
+            color: white;
+            font-size: 12px;
+        }
+
+        .txtcenter {
+            text-align: center;
+        }
+
+        .day {
+            background: linear-gradient(180deg, #9a242b, #71151a);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .blank {
+            height: 120px;
+            background: #faf9f6;
+            border: 1px solid #e2ddd4;
+        }
+
+        .subject {
+            height: 120px;
+            padding: 9px 6px;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.45;
+            color: #333;
+            border: 1px solid rgba(90, 35, 35, 0.12);
+        }
+
+        .subject b {
+            display: block;
+            margin: 4px 0 5px;
+            font-size: 14px;
+            line-height: 1.25;
+            color: #5d151a;
+        }
+
+        .code {
+            font-weight: bold;
+            color: #76535a;
+            font-size: 12px;
+        }
+
+        .c1 {
+            background: linear-gradient(135deg, #fff2b8, #ffe18a);
+        }
+
+        .c2 {
+            background: linear-gradient(135deg, #ffd9cd, #ffc3b4);
+        }
+
+        .c3 {
+            background: linear-gradient(135deg, #ffe7ae, #ffd390);
+        }
+
+        .c4 {
+            background: linear-gradient(135deg, #fff0d4, #ffdcb2);
+        }
+
+        .c5 {
+            background: linear-gradient(135deg, #fff8c9, #f1e38c);
+        }
+
+        .c6 {
+            background: linear-gradient(135deg, #f8dddd, #efc1c1);
+        }
+
+        .c7 {
+            background: linear-gradient(135deg, #ffe2bd, #ffcb93);
+        }
+
+        .c8 {
+            background: linear-gradient(135deg, #f7e7c6, #e8d19d);
+        }
+
+        .copyright {
+            margin-top: 18px;
+            padding: 13px 8px 2px;
+            border-top: 1px solid #ded7ca;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.7;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>
+            ตารางเรียน <a href="https://www.facebook.com/cpe.rmutp/" target="_blank">สาขาวิศวกรรมคอมพิวเตอร์</a> 1/2569
+        </h1>
+
+        <div class="subinfo">
+            คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร<br>
+            รุ่น 69 กลุ่ม ปคพ./1 | รวม 17 หน่วยกิต
+        </div>
+
+        <table>
+            <tr>
+                <th style="width: 60px;">Day/Time</th>
+                <th style="width: 80px;">8:00-9:00</th>
+                <th style="width: 80px;">9:00-10:00</th>
+                <th style="width: 80px;">10:00-11:00</th>
+                <th style="width: 80px;">11:00-12:00</th>
+                <th style="width: 80px;">12:00-13:00</th>
+                <th style="width: 80px;">13:00-14:00</th>
+                <th style="width: 80px;">14:00-15:00</th>
+                <th style="width: 80px;">15:00-16:00</th>
+                <th style="width: 80px;">16:00-17:00</th>
+            </tr>
+
+            <tr>
+                <td style="width: 60px;" class="txtcenter day">จันทร์</td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" colspan="3" class="subject c1">
+                    <span class="code">EN2044101-65</span><br>
+                    <b>การฝึกปฏิบัติทางวิศวกรรมคอมพิวเตอร์ 1</b>
+                    กลุ่ม 1<br>
+                    ห้อง 1964 อาคาร 15<br>
+                    ผู้สอน: ผศ.สิทธิศักดิ์ วรดิษฐ์
+                </td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" colspan="4" class="subject c2">
+                    <span class="code">EN2041101-65</span><br>
+                    <b>การโปรแกรมคอมพิวเตอร์</b>
+                    กลุ่ม 1<br>
+                    ห้อง 1957 อาคาร 15<br>
+                    ผู้สอน: ผศ.ดร.เกรียงไกร เหลืองอำพล
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 60px;" class="txtcenter day">อังคาร</td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" colspan="3" class="subject c3">
+                    <span class="code">GE2200108-64</span><br>
+                    <b>ภาษาอังกฤษเพื่อการเรียนรู้</b>
+                    กลุ่ม 33<br>
+                    ห้อง 1942 อาคาร 15<br>
+                    ผู้สอน: ผศ.ภันรัชสา จารุจินดา
+                </td>
+                <td style="width: 80px;" colspan="5" class="blank"></td>
+            </tr>
+
+            <tr>
+                <td style="width: 60px;" class="txtcenter day">พุธ</td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" colspan="3" class="subject c4">
+                    <span class="code">GE2300110-64</span><br>
+                    <b>การพัฒนาคุณภาพชีวิตและความอยู่ดี มีสุข</b>
+                    กลุ่ม 1<br>
+                    ห้อง 1962 อาคาร 15<br>
+                    ผู้สอน: อ.ดร.ประยุทธ เทียมสุข
+                </td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" colspan="2" class="subject c5">
+                    <span class="code">GE2500101-64</span><br>
+                    <b>พลศึกษา</b>
+                    กลุ่ม 22<br>
+                    โรงยิม 3 กิจการ<br>
+                    ผู้สอน: อ.จันธรัชษา เมืองพันพงษ์
+                </td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" class="subject c6">
+                    <span class="code">HR-</span><br>
+                    <b>พบอาจารย์ที่ปรึกษา</b>
+                    กลุ่ม 309<br>
+                    ห้อง 1958 อาคาร 15<br>
+                    ผู้สอน: ผศ.สิทธิศักดิ์ วรดิษฐ์
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width: 60px;" class="txtcenter day">พฤหัสบดี</td>
+                <td style="width: 80px;" colspan="4" class="blank"></td>
+                <td style="width: 80px;" colspan="3" class="subject c7">
+                    <span class="code">ST2051107-65</span><br>
+                    <b>ฟิสิกส์ 1 สำหรับวิศวกร</b>
+                    กลุ่ม 1<br>
+                    ห้อง 1957 อาคาร 15<br>
+                    ผู้สอน: ผศ.ดร.ชัชวาล ศรีภักดี
+                </td>
+                <td style="width: 80px;" colspan="2" class="blank"></td>
+            </tr>
+
+            <tr>
+                <td style="width: 60px;" class="txtcenter day">ศุกร์</td>
+                <td style="width: 80px;" class="blank"></td>
+                <td style="width: 80px;" colspan="3" class="subject c8">
+                    <span class="code">EN2041102-65</span><br>
+                    <b>วงจรไฟฟ้าและอิเล็กทรอนิกส์</b>
+                    กลุ่ม 1<br>
+                    ห้อง 1958 อาคาร 15<br>
+                    ผู้สอน: ผศ.ดร.วีระยุทธ คุณรัตนสิริ
+                </td>
+                <td style="width: 80px;" colspan="5" class="blank"></td>
+            </tr>
+        </table>
+
+        <div class="copyright">
+            © สงวนลิขสิทธิ์ พ.ศ. 2569 | 132-1 นายจิรายุ ชิยานุวัฒน์<br>
+            สาขาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร
+        </div>
+
+    </div>
+</body>
+
+</html>
